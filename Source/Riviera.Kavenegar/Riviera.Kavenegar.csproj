@@ -1,0 +1,68 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFrameworks>net5.0;netcoreapp3.1;netstandard2.0</TargetFrameworks>
+        <GenerateDocumentationFile>true</GenerateDocumentationFile>
+        <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
+        <OutputType>Library</OutputType>
+        <LangVersion>8.0</LangVersion>
+        <Nullable>enable</Nullable>
+    </PropertyGroup>
+
+    <PropertyGroup>
+        <NoWarn>SA1101;NU5105;CA1303;SA1309;SA0001;SA1633;IDE0065;CS1591</NoWarn>
+        <EnableNETAnalyzers>true</EnableNETAnalyzers>
+        <AnalysisLevel>latest</AnalysisLevel>
+    </PropertyGroup>
+
+    <PropertyGroup Condition="'$(TargetFramework)' == 'netstandard2.0'">
+        <NoWarn>$(NoWarn);nullable</NoWarn>
+    </PropertyGroup>
+
+    <!--
+    # SA1101: Prefix local calls with this.
+    # NU5105: Simver 2.0 older client warning.
+    # CA1303: Do not pass literals as localized parameters.
+    # SA1309: Field names should not begin with underscore.
+    # SA0001: XML comment analysis is disabled due to project configuration
+    # SA1633: The file header is missing or not located at the top of the file.
+    -->
+
+    <PropertyGroup>
+        <Version>1.0.0-preview.1</Version>
+        <Authors>Peyman Mohammadi</Authors>
+        <PackageId>Riviera.Kavenegar</PackageId>
+        <Copyright>© 2021 Peyman Mohammadi</Copyright>
+        <PackageLicenseExpression>MIT</PackageLicenseExpression>
+        <Description>Unofficial implementation of Kavenegar API</Description>
+        <PackageTags>riviera; kavenegar; api; sms; text; message</PackageTags>
+        <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
+        <RepositoryUrl>https://github.com/peymanr34/riviera-kavenegar</RepositoryUrl>
+        <PackageProjectUrl>https://github.com/peymanr34/riviera-kavenegar</PackageProjectUrl>
+    </PropertyGroup>
+
+    <ItemGroup Condition="'$(TargetFramework)' == 'net5.0'">
+        <PackageReference Include="Microsoft.Extensions.Options" Version="5.0.0" />
+    </ItemGroup>
+
+    <ItemGroup Condition="'$(TargetFramework)' == 'netcoreapp3.1'">
+        <PackageReference Include="Microsoft.Extensions.Options" Version="3.1.17" />
+    </ItemGroup>
+
+    <ItemGroup Condition="'$(TargetFramework)' == 'netstandard2.0'">
+        <PackageReference Include="System.Text.Json" Version="5.0.2" />
+        <PackageReference Include="Microsoft.Extensions.Options" Version="5.0.0" />
+    </ItemGroup>
+
+    <ItemGroup>
+        <PackageReference Include="DotNet.ReproducibleBuilds" Version="0.1.64">
+            <PrivateAssets>all</PrivateAssets>
+            <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+        </PackageReference>
+        <PackageReference Include="StyleCop.Analyzers" Version="1.1.118">
+            <PrivateAssets>all</PrivateAssets>
+            <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+        </PackageReference>
+    </ItemGroup>
+
+</Project>
