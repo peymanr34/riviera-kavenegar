@@ -10,6 +10,12 @@
     </PropertyGroup>
 
     <PropertyGroup>
+        <EmbedUntrackedSources>true</EmbedUntrackedSources>
+        <PublishRepositoryUrl>true</PublishRepositoryUrl>
+        <DebugType>embedded</DebugType>
+    </PropertyGroup>
+
+    <PropertyGroup>
         <NoWarn>SA1101;NU5105;CA1303;SA1309;SA0001;SA1633;IDE0065;CS1591</NoWarn>
         <EnableNETAnalyzers>true</EnableNETAnalyzers>
         <AnalysisLevel>latest</AnalysisLevel>
@@ -29,7 +35,7 @@
     -->
 
     <PropertyGroup>
-        <Version>1.0.0-preview.1</Version>
+        <Version>1.0.0-preview.2</Version>
         <Authors>Peyman Mohammadi</Authors>
         <PackageId>Riviera.Kavenegar</PackageId>
         <Copyright>© 2021 Peyman Mohammadi</Copyright>
@@ -55,7 +61,11 @@
     </ItemGroup>
 
     <ItemGroup>
-        <PackageReference Include="DotNet.ReproducibleBuilds" Version="0.1.64">
+        <PackageReference Include="Microsoft.SourceLink.GitHub" Version="1.0.0">
+            <PrivateAssets>all</PrivateAssets>
+            <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+        </PackageReference>
+        <PackageReference Include="Microsoft.VisualStudio.Threading.Analyzers" Version="17.0.63">
             <PrivateAssets>all</PrivateAssets>
             <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
         </PackageReference>

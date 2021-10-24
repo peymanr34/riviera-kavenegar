@@ -215,9 +215,9 @@
         /// </summary>
         /// <param name="messageId">Id of the message in your database.</param>
         /// <returns>A <see cref="Task"/> representing the asynchronous operation.</returns>
-        public async Task<Response<StatusLocal>> GetStatusByLocalId(string messageId)
+        public async Task<Response<StatusLocal>> GetStatusByLocalIdAsync(string messageId)
         {
-            var result = await GetStatusByLocalId(new[] { messageId })
+            var result = await GetStatusByLocalIdAsync(new[] { messageId })
                 .ConfigureAwait(false);
 
             return new Response<StatusLocal>
@@ -232,7 +232,7 @@
         /// </summary>
         /// <param name="messageIds">Id of the messages in your database.</param>
         /// <returns>A <see cref="Task"/> representing the asynchronous operation.</returns>
-        public async Task<Response<List<StatusLocal>>> GetStatusByLocalId(IList<string> messageIds)
+        public async Task<Response<List<StatusLocal>>> GetStatusByLocalIdAsync(IList<string> messageIds)
         {
             if (messageIds is null)
             {
@@ -516,7 +516,7 @@
         /// </summary>
         /// <param name="textToSpeechCall">A <see cref="NewTextToSpeechCall"/> instance describing the new meesage to send.</param>
         /// <returns>A <see cref="Task"/> representing the asynchronous operation.</returns>
-        public async Task<Response<List<Message>>> SendTextToSpeechCall(NewTextToSpeechCall textToSpeechCall)
+        public async Task<Response<List<Message>>> SendTextToSpeechCallAsync(NewTextToSpeechCall textToSpeechCall)
         {
             if (textToSpeechCall is null)
             {
