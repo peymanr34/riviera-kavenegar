@@ -1,7 +1,7 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
     <PropertyGroup>
-        <TargetFrameworks>net5.0;netcoreapp3.1;netstandard2.0</TargetFrameworks>
+        <TargetFrameworks>net6.0;netstandard2.0</TargetFrameworks>
         <GenerateDocumentationFile>true</GenerateDocumentationFile>
         <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
         <OutputType>Library</OutputType>
@@ -13,6 +13,10 @@
         <EmbedUntrackedSources>true</EmbedUntrackedSources>
         <PublishRepositoryUrl>true</PublishRepositoryUrl>
         <DebugType>embedded</DebugType>
+    </PropertyGroup>
+
+    <PropertyGroup Condition="'$(GITHUB_ACTIONS)' == 'true'">
+        <ContinuousIntegrationBuild>true</ContinuousIntegrationBuild>
     </PropertyGroup>
 
     <PropertyGroup>
@@ -35,10 +39,9 @@
     -->
 
     <PropertyGroup>
-        <Version>1.0.0-preview.2</Version>
         <Authors>Peyman Mohammadi</Authors>
         <PackageId>Riviera.Kavenegar</PackageId>
-        <Copyright>© 2021 Peyman Mohammadi</Copyright>
+        <Copyright>© 2023 Peyman Mohammadi</Copyright>
         <PackageLicenseExpression>MIT</PackageLicenseExpression>
         <Description>Unofficial implementation of Kavenegar API</Description>
         <PackageTags>riviera; kavenegar; api; sms; text; message</PackageTags>
@@ -47,12 +50,9 @@
         <PackageProjectUrl>https://github.com/peymanr34/riviera-kavenegar</PackageProjectUrl>
     </PropertyGroup>
 
-    <ItemGroup Condition="'$(TargetFramework)' == 'net5.0'">
-        <PackageReference Include="Microsoft.Extensions.Options" Version="5.0.0" />
-    </ItemGroup>
 
-    <ItemGroup Condition="'$(TargetFramework)' == 'netcoreapp3.1'">
-        <PackageReference Include="Microsoft.Extensions.Options" Version="3.1.17" />
+    <ItemGroup Condition="'$(TargetFramework)' == 'net6.0'">
+        <PackageReference Include="Microsoft.Extensions.Options" Version="6.0.0" />
     </ItemGroup>
 
     <ItemGroup Condition="'$(TargetFramework)' == 'netstandard2.0'">
