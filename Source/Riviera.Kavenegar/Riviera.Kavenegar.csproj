@@ -42,6 +42,7 @@
         <Authors>Peyman Mohammadi</Authors>
         <PackageId>Riviera.Kavenegar</PackageId>
         <Copyright>© 2023 Peyman Mohammadi</Copyright>
+        <PackageReadmeFile>README.md</PackageReadmeFile>
         <PackageLicenseExpression>MIT</PackageLicenseExpression>
         <Description>Unofficial implementation of Kavenegar API</Description>
         <PackageTags>riviera; kavenegar; api; sms; text; message</PackageTags>
@@ -50,6 +51,9 @@
         <PackageProjectUrl>https://github.com/peymanr34/riviera-kavenegar</PackageProjectUrl>
     </PropertyGroup>
 
+    <ItemGroup>
+        <None Include="..\..\README.md" Pack="true" PackagePath="\" />
+    </ItemGroup>
 
     <ItemGroup Condition="'$(TargetFramework)' == 'net6.0'">
         <PackageReference Include="Microsoft.Extensions.Options" Version="6.0.0" />
