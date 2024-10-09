@@ -1,18 +1,18 @@
 ﻿# Riviera.Kavenegar
-Unofficial implementation of Kavenegar API for .NET
+Unofficial implementation of the Kavenegar API for .NET
 
-[![Nuget Version][nuget-badge]][nuget]
-[![Nuget Downloads][nuget-badge-dl]][nuget]
+[![NuGet Version][nuget-badge]][nuget]
+[![NuGet Downloads][nuget-badge-dl]][nuget]
 
-## Installing the NuGet Package
-You can install this package by entering the following command into your `Package Manager Console`:
+## Installation
+You can install this package via the `Package Manager Console` in Visual Studio.
 
 ```powershell
 Install-Package Riviera.Kavenegar -PreRelease
 ```
 
 ## Startup Configuration
-To use `KavenegarService` you need to register it in your `Startup.cs` class.
+To use the `KavenegarService` you need to register it in your `Startup.cs` class.
 
 ```csharp
 // using Riviera.Kavenegar;
@@ -40,7 +40,7 @@ public class HomeController : Controller
 ```
 
 ## Sending a text message
-You can send a text message via `SendMessageAsync` method.
+You can send a text message via the `SendMessageAsync` method.
 
 ```csharp
 [Route("send")]
@@ -59,7 +59,7 @@ public async Task<IActionResult> Send()
 ```
 
 ## Checking the status
-You can check the text message status via `GetStatusAsync` method.
+You can check the text message status via the `GetStatusAsync` method.
 
 ```csharp
 [Route("status")]
@@ -81,7 +81,7 @@ public async Task<IActionResult> Status()
 This project is licensed under the [MIT License](LICENSE).
 
 [nuget]: https://www.nuget.org/packages/Riviera.Kavenegar
-[nuget-badge]: https://img.shields.io/nuget/v/Riviera.Kavenegar.svg?label=Release
+[nuget-badge]: https://img.shields.io/nuget/v/Riviera.Kavenegar.svg?label=NuGet
 [nuget-badge-dl]: https://img.shields.io/nuget/dt/Riviera.Kavenegar?label=Downloads&color=red
 
 [user-secrets]: https://docs.microsoft.com/en-us/aspnet/core/security/app-secrets
