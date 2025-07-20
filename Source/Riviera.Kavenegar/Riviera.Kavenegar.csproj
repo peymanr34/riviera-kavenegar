@@ -40,6 +40,7 @@
 
     <PropertyGroup>
         <Authors>Peyman Mohammadi</Authors>
+        <PackageIcon>icon.png</PackageIcon>
         <PackageId>Riviera.Kavenegar</PackageId>
         <Copyright>© 2023 Peyman Mohammadi</Copyright>
         <PackageReadmeFile>README.md</PackageReadmeFile>
@@ -53,6 +54,7 @@
 
     <ItemGroup>
         <None Include="..\..\README.md" Pack="true" PackagePath="\" />
+        <None Include="..\..\Assets\icon.png" Pack="true" PackagePath="\" />
     </ItemGroup>
 
     <ItemGroup Condition="'$(TargetFramework)' == 'net6.0'">
