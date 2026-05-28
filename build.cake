@@ -3,7 +3,7 @@ var configuration = Argument("configuration", "Release");
 
 var version = Argument("package-version", "");
 
-var solution = "./Source/Riviera.Kavenegar.sln";
+var solution = "./Source/Riviera.Kavenegar.slnx";
 var artifacts = "./.artifacts";
 
 Task("Clean")
@@ -60,12 +60,11 @@ Task("Pack")
 
     DotNetPack(solution, new DotNetPackSettings
     {
-        NoBuild = true,
         NoRestore = true,
         OutputDirectory = artifacts,
         Configuration = configuration,
         MSBuildSettings = new DotNetMSBuildSettings()
-            .WithProperty("PackageVersion", actualVersion)
+            .WithProperty("Version", actualVersion)
     });
 
     var pushSettings = new DotNetNuGetPushSettings
